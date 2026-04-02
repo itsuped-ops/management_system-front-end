@@ -10,11 +10,20 @@ const getApiBaseUrl = () => {
         window.location.hostname === '127.0.0.1' ||
         window.location.hostname.includes('local');
 
-    // For production, use environment variable or default to Render URL
+    // For production, check environment variable first
     if (!isLocalhost) {
-        // You can set this via Netlify environment variables
-        const productionUrl = window.PRODUCTION_API_URL || 'https://management-system-back-end.onrender.com/api';
-        return productionUrl;
+        // Priority order:
+        // 1. window.PRODUCTION_API_URL (set by build process)
+        // 2. Process environment (for Vercel/Netlify)
+        // 3. Hardcoded fallback (replace with your URL)
+
+        // Try to get from window object (set during build)
+        if (typeof window !== 'undefined' && window.PRODUCTION_API_URL) {
+            return window.PRODUCTION_API_URL;
+        }
+
+        // Fallback - REPLACE THIS URL with your actual Render backend
+        return 'https://your-actual-backend-url.onrender.com/api';
     }
 
     return 'http://localhost:5000/api';
