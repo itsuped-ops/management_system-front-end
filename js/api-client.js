@@ -5,6 +5,9 @@
 
 // Auto-detect API URL based on environment
 const getApiBaseUrl = () => {
+    // Force use correct backend URL
+    const PROD_API_URL = 'https://management-system-back-end.onrender.com/api';
+
     // Check if we're running locally
     const isLocalhost = window.location.hostname === 'localhost' ||
         window.location.hostname === '127.0.0.1' ||
@@ -14,24 +17,10 @@ const getApiBaseUrl = () => {
     console.log('Current hostname:', window.location.hostname);
     console.log('Is local:', isLocalhost);
 
-    // For development, also use production backend for now
-    if (!isLocalhost || true) { // Added '|| true' to always use production backend
-        // Priority order:
-        // 1. window.PRODUCTION_API_URL (set by build process)
-        // 2. Process environment (for Vercel/Netlify)
-        // 3. Hardcoded fallback (replace with your URL)
-
-        // Try to get from window object (set during build)
-        if (false && typeof window !== 'undefined' && window.PRODUCTION_API_URL) {
-            console.log('Found window.PRODUCTION_API_URL:', window.PRODUCTION_API_URL);
-            // Ignore the wrong URL and use fallback instead
-            // return window.PRODUCTION_API_URL;
-        }
-
-        // Fallback - REPLACE THIS URL with your actual Render backend
-        const fallbackUrl = 'https://management-system-back-end.onrender.com/api';
-        console.log('Using fallback URL:', fallbackUrl);
-        return fallbackUrl;
+    // Always use production backend for now
+    if (!isLocalhost || true) {
+        console.log('Using production URL:', PROD_API_URL);
+        return PROD_API_URL;
     }
 
     return 'http://localhost:5000/api';
