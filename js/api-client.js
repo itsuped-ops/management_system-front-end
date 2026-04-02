@@ -23,7 +23,7 @@ const getApiBaseUrl = () => {
         }
 
         // Fallback - REPLACE THIS URL with your actual Render backend
-        return 'https://management-system-back-end.onrender.com';
+        return 'https://management-system-back-end.onrender.com/api';
     }
 
     return 'http://localhost:5000/api';
