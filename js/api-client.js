@@ -23,8 +23,9 @@ const getApiBaseUrl = () => {
 
         // Try to get from window object (set during build)
         if (typeof window !== 'undefined' && window.PRODUCTION_API_URL) {
-            console.log('Using window.PRODUCTION_API_URL:', window.PRODUCTION_API_URL);
-            return window.PRODUCTION_API_URL;
+            console.log('Found window.PRODUCTION_API_URL:', window.PRODUCTION_API_URL);
+            // Ignore the wrong URL and use fallback instead
+            // return window.PRODUCTION_API_URL;
         }
 
         // Fallback - REPLACE THIS URL with your actual Render backend
