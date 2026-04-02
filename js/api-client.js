@@ -13,7 +13,7 @@ const getApiBaseUrl = () => {
     // For production, use environment variable or default to Render URL
     if (!isLocalhost) {
         // You can set this via Netlify environment variables
-        const productionUrl = window.PRODUCTION_API_URL || 'https://YOUR-BACKEND-URL.onrender.com/api';
+        const productionUrl = window.PRODUCTION_API_URL || 'https://management-system-back-end.onrender.com/api';
         return productionUrl;
     }
 
