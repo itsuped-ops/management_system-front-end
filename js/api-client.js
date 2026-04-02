@@ -14,8 +14,8 @@ const getApiBaseUrl = () => {
     console.log('Current hostname:', window.location.hostname);
     console.log('Is local:', isLocalhost);
 
-    // For production, check environment variable first
-    if (!isLocalhost) {
+    // For development, also use production backend for now
+    if (!isLocalhost || true) { // Added '|| true' to always use production backend
         // Priority order:
         // 1. window.PRODUCTION_API_URL (set by build process)
         // 2. Process environment (for Vercel/Netlify)
@@ -28,7 +28,7 @@ const getApiBaseUrl = () => {
         }
 
         // Fallback - REPLACE THIS URL with your actual Render backend
-        const fallbackUrl = 'https://management-system-back-end.onrender.com';
+        const fallbackUrl = 'https://management-system-back-end.onrender.com/api';
         console.log('Using fallback URL:', fallbackUrl);
         return fallbackUrl;
     }
