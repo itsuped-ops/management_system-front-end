@@ -1,0 +1,661 @@
+/* =====================================================
+   نظام إدارة المشاريع والمهام - ملف CSS الرئيسي
+   Main Stylesheet
+   ===================================================== */
+
+:root {
+    --primary-color: #667eea;
+    --secondary-color: #764ba2;
+    --success-color: #48bb78;
+    --danger-color: #f56565;
+    --warning-color: #ed8936;
+    --info-color: #4299e1;
+    --light-bg: #f7fafc;
+    --border-color: #e2e8f0;
+    --text-dark: #2d3748;
+    --text-light: #718096;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--light-bg);
+    direction: rtl;
+}
+
+/* =====================================================
+   Navigation Bar
+   ===================================================== */
+
+.navbar {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%) !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    font-weight: 700;
+    font-size: 20px;
+    transition: all 0.3s ease;
+}
+
+.navbar-brand:hover {
+    transform: translateX(-5px);
+}
+
+.nav-link {
+    transition: all 0.3s ease;
+    margin: 0 10px;
+}
+
+.nav-link:hover {
+    color: var(--primary-color) !important;
+    transform: translateY(-2px);
+}
+
+/* =====================================================
+   Sidebar
+   ===================================================== */
+
+.sidebar {
+    background-color: white;
+    border-right: 1px solid var(--border-color);
+    min-height: calc(100vh - 56px);
+    position: fixed;
+    width: 16.66667%;
+    right: 0;
+    top: 56px;
+    overflow-y: auto;
+    z-index: 100;
+}
+
+.sidebar .nav-link {
+    padding: 12px 20px;
+    border-right: 3px solid transparent;
+    transition: all 0.3s ease;
+    margin: 0;
+}
+
+.sidebar .nav-link:hover {
+    background-color: var(--light-bg);
+    border-right-color: var(--primary-color);
+}
+
+.sidebar .nav-link.active {
+    background-color: rgba(102, 126, 234, 0.1);
+    border-right-color: var(--primary-color);
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.sidebar .nav-link i {
+    margin-left: 10px;
+    width: 20px;
+    text-align: center;
+}
+
+/* =====================================================
+   Main Content
+   ===================================================== */
+
+.main-content {
+    margin-right: 16.66667%;
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+
+.main-content h1 {
+    color: var(--text-dark);
+    font-weight: 700;
+    margin-bottom: 30px;
+    font-size: 28px;
+}
+
+.main-content h1 i {
+    margin-left: 10px;
+    color: var(--primary-color);
+}
+
+/* =====================================================
+   Cards
+   ===================================================== */
+
+.card {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.card:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.card-header {
+    background-color: var(--light-bg);
+    border-bottom: 1px solid var(--border-color);
+    padding: 20px;
+    font-weight: 600;
+}
+
+.card-header h5 {
+    color: var(--text-dark);
+    font-weight: 700;
+}
+
+.card-header h5 i {
+    margin-left: 10px;
+    color: var(--primary-color);
+}
+
+.card-body {
+    padding: 20px;
+}
+
+/* =====================================================
+   Stat Cards
+   ===================================================== */
+
+.stat-card {
+    border-right: 4px solid var(--primary-color);
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
+}
+
+.stat-card h3 {
+    color: var(--text-dark);
+    font-weight: 700;
+    font-size: 32px;
+}
+
+.stat-card .text-muted {
+    color: var(--text-light);
+    font-weight: 500;
+}
+
+.stat-icon {
+    font-size: 40px;
+    opacity: 0.2;
+}
+
+.stat-card:nth-child(2) {
+    border-right-color: var(--info-color);
+}
+
+.stat-card:nth-child(3) {
+    border-right-color: var(--success-color);
+}
+
+.stat-card:nth-child(4) {
+    border-right-color: var(--danger-color);
+}
+
+/* =====================================================
+   Progress Bar
+   ===================================================== */
+
+.progress {
+    background-color: var(--border-color);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    background: linear-gradient(90deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    transition: width 0.6s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+/* =====================================================
+   Buttons
+   ===================================================== */
+
+.btn {
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.btn-group {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: white;
+}
+
+.btn-primary:hover {
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+    color: white;
+}
+
+.btn-outline-primary {
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn-secondary {
+    background-color: var(--border-color);
+    color: var(--text-dark);
+}
+
+.btn-secondary:hover {
+    background-color: #cbd5e0;
+    color: var(--text-dark);
+}
+
+.btn-sm {
+    padding: 6px 12px;
+    font-size: 12px;
+}
+
+/* =====================================================
+   Forms
+   ===================================================== */
+
+.form-label {
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+    display: block;
+}
+
+.form-control,
+.form-select {
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    padding: 10px 15px;
+    transition: all 0.3s ease;
+    font-size: 14px;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+    outline: none;
+}
+
+.form-control::placeholder {
+    color: var(--text-light);
+}
+
+/* =====================================================
+   Tables
+   ===================================================== */
+
+.table {
+    color: var(--text-dark);
+}
+
+.table thead {
+    background-color: var(--light-bg);
+    font-weight: 600;
+}
+
+.table thead th {
+    border-bottom: 2px solid var(--border-color);
+    color: var(--text-dark);
+}
+
+.table tbody tr {
+    transition: all 0.3s ease;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.table tbody tr:hover {
+    background-color: rgba(102, 126, 234, 0.05);
+}
+
+.table-action-buttons {
+    display: flex;
+    gap: 5px;
+}
+
+.table-action-buttons .btn {
+    padding: 5px 10px;
+    font-size: 12px;
+}
+
+/* =====================================================
+   Badges
+   ===================================================== */
+
+.badge {
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 12px;
+}
+
+.badge-success {
+    background-color: rgba(72, 187, 120, 0.2);
+    color: var(--success-color);
+}
+
+.badge-danger {
+    background-color: rgba(245, 101, 101, 0.2);
+    color: var(--danger-color);
+}
+
+.badge-warning {
+    background-color: rgba(237, 137, 54, 0.2);
+    color: var(--warning-color);
+}
+
+.badge-info {
+    background-color: rgba(66, 153, 225, 0.2);
+    color: var(--info-color);
+}
+
+/* =====================================================
+   Task List
+   ===================================================== */
+
+.task-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.task-item {
+    background-color: var(--light-bg);
+    padding: 15px;
+    border-radius: 8px;
+    border-right: 4px solid var(--primary-color);
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.task-item:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.task-item.completed {
+    opacity: 0.6;
+    border-right-color: var(--success-color);
+}
+
+.task-item.completed .task-title {
+    text-decoration: line-through;
+}
+
+.task-item.urgent {
+    border-right-color: var(--danger-color);
+}
+
+.task-info {
+    flex: 1;
+}
+
+.task-title {
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 5px;
+}
+
+.task-meta {
+    font-size: 12px;
+    color: var(--text-light);
+}
+
+.task-meta span {
+    margin-left: 15px;
+}
+
+.task-meta i {
+    margin-left: 5px;
+}
+
+/* =====================================================
+   Modals
+   ===================================================== */
+
+.modal-content {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+.modal-header {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: white;
+    border: none;
+    padding: 20px;
+}
+
+.modal-header .modal-title {
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.modal-header .modal-title i {
+    margin-left: 10px;
+}
+
+.modal-body {
+    padding: 25px;
+}
+
+.modal-footer {
+    border-top: 1px solid var(--border-color);
+    padding: 15px 25px;
+}
+
+/* =====================================================
+   Alerts
+   ===================================================== */
+
+.alert {
+    border: none;
+    border-radius: 8px;
+    padding: 15px 20px;
+    border-left: 4px solid;
+}
+
+.alert-success {
+    background-color: rgba(72, 187, 120, 0.1);
+    border-left-color: var(--success-color);
+    color: var(--success-color);
+}
+
+.alert-danger {
+    background-color: rgba(245, 101, 101, 0.1);
+    border-left-color: var(--danger-color);
+    color: var(--danger-color);
+}
+
+.alert-warning {
+    background-color: rgba(237, 137, 54, 0.1);
+    border-left-color: var(--warning-color);
+    color: var(--warning-color);
+}
+
+.alert-info {
+    background-color: rgba(66, 153, 225, 0.1);
+    border-left-color: var(--info-color);
+    color: var(--info-color);
+}
+
+/* =====================================================
+   Responsive Design
+   ===================================================== */
+
+@media (max-width: 768px) {
+    .sidebar {
+        position: relative;
+        width: 100%;
+        min-height: auto;
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+        top: 0;
+        left: 0;
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+
+    .main-content h1 {
+        font-size: 22px;
+    }
+
+    .stat-card {
+        margin-bottom: 15px;
+    }
+
+    .task-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .table {
+        font-size: 12px;
+    }
+
+    .table-action-buttons {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 576px) {
+    .navbar-brand {
+        font-size: 16px;
+    }
+
+    .main-content {
+        padding: 10px;
+    }
+
+    .main-content h1 {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+
+    .row>div {
+        margin-bottom: 15px;
+    }
+
+    .card {
+        margin-bottom: 15px;
+    }
+
+    .btn {
+        padding: 8px 15px;
+        font-size: 12px;
+    }
+
+    .modal-body {
+        padding: 15px;
+    }
+}
+
+/* =====================================================
+   Animations
+   ===================================================== */
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.3s ease-in;
+}
+
+.slide-in {
+    animation: slideIn 0.3s ease-out;
+}
+
+/* =====================================================
+   Utilities
+   ===================================================== */
+
+.text-muted {
+    color: var(--text-light) !important;
+}
+
+.text-dark {
+    color: var(--text-dark) !important;
+}
+
+.bg-light {
+    background-color: var(--light-bg) !important;
+}
+
+.border-light {
+    border-color: var(--border-color) !important;
+}
+
+.opacity-50 {
+    opacity: 0.5;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.no-wrap {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.loading-spinner {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid var(--border-color);
+    border-top-color: var(--primary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
