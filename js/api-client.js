@@ -22,7 +22,7 @@ const getApiBaseUrl = () => {
         // 3. Hardcoded fallback (replace with your URL)
 
         // Try to get from window object (set during build)
-        if (typeof window !== 'undefined' && window.PRODUCTION_API_URL) {
+        if (false && typeof window !== 'undefined' && window.PRODUCTION_API_URL) {
             console.log('Found window.PRODUCTION_API_URL:', window.PRODUCTION_API_URL);
             // Ignore the wrong URL and use fallback instead
             // return window.PRODUCTION_API_URL;
