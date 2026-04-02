@@ -10,6 +10,10 @@ const getApiBaseUrl = () => {
         window.location.hostname === '127.0.0.1' ||
         window.location.hostname.includes('local');
 
+    // Debug logging
+    console.log('Current hostname:', window.location.hostname);
+    console.log('Is local:', isLocalhost);
+
     // For production, check environment variable first
     if (!isLocalhost) {
         // Priority order:
@@ -19,11 +23,14 @@ const getApiBaseUrl = () => {
 
         // Try to get from window object (set during build)
         if (typeof window !== 'undefined' && window.PRODUCTION_API_URL) {
+            console.log('Using window.PRODUCTION_API_URL:', window.PRODUCTION_API_URL);
             return window.PRODUCTION_API_URL;
         }
 
         // Fallback - REPLACE THIS URL with your actual Render backend
-        return 'https://management-system-back-end.onrender.com/api';
+        const fallbackUrl = 'https://management-system-back-end.onrender.com';
+        console.log('Using fallback URL:', fallbackUrl);
+        return fallbackUrl;
     }
 
     return 'http://localhost:5000/api';
